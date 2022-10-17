@@ -296,7 +296,7 @@ const appsList = [
 ]
 
 class AppStore extends Component {
-  state = {activeTabId: tabsList[0].tabId, searchInput: ' '}
+  state = {activeTabId: tabsList[0].tabId, searchInput:""}
 
   clickTabItem = tabId => {
     this.setState({activeTabId: tabId})
@@ -348,7 +348,7 @@ class AppStore extends Component {
           ))}
         </ul>
 
-        {searchInput.length > 0 ? (
+        {searchInput!==null ? (
           <ul className="apps-container">
             {searchResults.map(eachApp => (
               <AppItem appDetails={eachApp} key={eachApp.appId} />
