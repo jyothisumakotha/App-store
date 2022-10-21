@@ -316,10 +316,10 @@ class AppStore extends Component {
 
   render() {
     const {activeTabId, searchInput} = this.state
-    const searchResults = appsList.filter(eachApp =>
+    const updatedList = this.getFilteredApps()
+     const searchResults = updatedList.filter(eachApp =>
       eachApp.appName.toLowerCase().includes(searchInput),
     )
-    const {updatedList} = this.getFilteredApps()
     return (
       <div className="bg-container">
         <h1 className="heading">App Store</h1>
